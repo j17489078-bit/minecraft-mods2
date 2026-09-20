@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mods — Minecraft Mods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="nav-holder">
+  <nav>
+    <a class="brand" href="index.html">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5fd87d" stroke-width="1.7" stroke-linejoin="round"><path d="M12 2.6 20.5 7v10L12 21.4 3.5 17V7z"/><path d="M3.5 7 12 11.6 20.5 7M12 11.6v9.8"/></svg>
+      Minecraft Mods
+    </a>
+    <a class="nav-link nav-desktop" href="index.html">Home</a>
+    <a class="nav-link nav-desktop active" href="mods.html">Mods</a>
+    <a class="nav-link nav-desktop" href="updates.html">Updates</a>
+    <a class="nav-link nav-desktop" href="about.html">About</a>
+    <a class="nav-link nav-desktop" href="contact.html">Contact</a>
+    <button class="nav-search" data-cmdk-open>Search <span class="kbd">⌘K</span></button>
+    <a class="pill-ghost" href="#admin">Admin</a>
+    <button id="nav-btn" aria-label="Menu">☰</button>
+  </nav>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a><a href="mods.html">Mods</a><a href="updates.html">Updates</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero" style="padding:80px 0 40px">
+    <h1 style="font-size:clamp(2.2rem,6vw,4rem)" data-rv>Mods.</h1>
+    <p class="lede" data-rv data-rv-delay="60">Every release links straight to its real .jar. No mirrors, no ad-walled download pages.</p>
+  </header>
+
+  <section>
+    <div class="row-between">
+      <span class="meta" id="mod-count">loading…</span>
+      <button class="linkbtn" id="mod-clear" hidden>Clear filters</button>
+    </div>
+    <div class="controls">
+      <div class="search">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5e6165" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="mod-search" type="text" placeholder="Search mods, tags, loaders" autocomplete="off">
+      </div>
+      <select id="mod-sort">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+        <option value="az">A–Z</option>
+        <option value="downloads">Most downloaded</option>
+      </select>
+    </div>
+    <div class="pill-row" id="cat-pills"></div>
+    <div class="pill-row" id="loader-pills" hidden></div>
+
+    <div class="grid" id="mod-grid"></div>
+    <div style="display:flex;justify-content:center;margin-top:22px">
+      <button class="pill-ghost" id="mod-load-more" hidden>Load more</button>
+    </div>
+  </section>
+
+  <section id="admin">
+    <div class="sec-head"><h2>Admin</h2></div>
+    <div class="admin-panel" id="admin-panel">
+      <p class="lede-sm">Signed in as the site owner, you can publish, edit and remove mods. Everyone else only sees the shelf above.</p>
+
+      <div id="admin-signed-out">
+        <form class="stack" id="admin-login-form">
+          <div>
+            <label for="admin-password">Admin password</label>
+            <input id="admin-password" type="password" required autocomplete="current-password">
+          </div>
+          <p class="err" id="admin-login-error"></p>
+          <div><button type="submit" class="pill-solid">Sign in</button></div>
+        </form>
+      </div>
+
+      <div id="admin-signed-in" hidden>
+        <div class="admin-status-row">
+          <span class="status-dot">Signed in</span>
+          <button type="button" class="linkbtn" id="admin-logout-btn">Sign out</button>
+        </div>
+
+        <form class="stack" id="admin-add-form" enctype="multipart/form-data">
+          <div class="form-row">
+            <div><label for="am-name">Mod name</label><input id="am-name" name="name" type="text" required maxlength="60"></div>
+            <div><label for="am-version">Version</label><input id="am-version" name="version" type="text" maxlength="20" placeholder="1.0.0"></div>
+          </div>
+          <div class="form-row">
+            <div><label for="am-cat">Category</label><input id="am-cat" name="cat" type="text" maxlength="24" placeholder="Communications"></div>
+            <div><label for="am-mc">Minecraft versions</label><input id="am-mc" name="mc" type="text" maxlength="60" placeholder="1.21.11 (comma-separated)"></div>
+          </div>
+          <div>
+            <label for="am-desc">Short description</label>
+            <textarea id="am-desc" name="desc" maxlength="300" placeholder="What it does, in two sentences."></textarea>
+          </div>
+          <div class="form-row">
+            <div><label for="am-loaders">Loaders</label><input id="am-loaders" name="loaders" type="text" maxlength="60" placeholder="Fabric, Forge"></div>
+            <div><label for="am-tags">Tags</label><input id="am-tags" name="tags" type="text" maxlength="80" placeholder="Proximity voice, Configurable"></div>
+          </div>
+          <div>
+            <label for="am-jar">Mod file (.jar)</label>
+            <input id="am-jar" name="jar" type="file" accept=".jar" required>
+          </div>
+          <label class="checkline"><input type="checkbox" name="featured"> Feature on the homepage</label>
+          <p class="err" id="admin-add-error"></p>
+          <p class="ok" id="admin-add-success"></p>
+          <div><button type="submit" class="pill-solid">Publish mod</button></div>
+        </form>
+
+        <hr class="admin-divider">
+        <h3 style="margin:0 0 12px;font-size:1rem;">Manage mods</h3>
+        <ul class="admin-mod-list" id="admin-manage-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Minecraft Mods — a small, curated shelf</span>
+    <button data-top>Back to top ↑</button>
+  </footer>
+</div>
+
+<div id="cmdk" hidden>
+  <div class="cmdk-panel">
+    <div class="cmdk-inputwrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5e6165" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cmdk-input" type="text" placeholder="Search pages and mods…" autocomplete="off">
+      <button data-cmdk-close aria-label="Close" style="background:none;border:0;color:var(--dim);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div id="cmdk-list"></div>
+  </div>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>
