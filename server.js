@@ -217,7 +217,6 @@ app.post("/api/mods/:id/download", (req, res) => {
   writeMods(list);
   res.json({ downloads: mod.downloads });
 });
-
 app.use("/downloads", express.static(UPLOAD_DIR, {
   index: false,
   dotfiles: "deny"
@@ -234,7 +233,10 @@ const PORT = process.env.PORT || 3000;
 console.log("=== Minecraft Mods Site ===");
 console.log("PORT:", PORT);
 console.log("PUBLIC_DIR:", PUBLIC_DIR);
-console.log("index.html exists:", fs.existsSync(path.join(PUBLIC_DIR, "index.html")));
+console.log(
+  "index.html exists:",
+  fs.existsSync(path.join(PUBLIC_DIR, "index.html"))
+);
 
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Minecraft Mods site running on port ${PORT}`);
