@@ -1,0 +1,80 @@
+[
+  {
+    "id": "fabric-api",
+    "name": "Fabric api",
+    "cat": "",
+    "version": "1.21.11",
+    "file": "fabric-api-0-141-6-1-21-11-1789887778895.jar",
+    "desc": "You need this for any of the mods to work",
+    "loaders": [
+      "Fabric"
+    ],
+    "mc": [
+      "1.21.11"
+    ],
+    "tags": [
+      "Api"
+    ],
+    "downloads": 0,
+    "added": "2026-09-20",
+    "featured": true
+  },
+  {
+    "id": "voice-chat",
+    "name": "Voice chat",
+    "cat": "talking",
+    "version": "1.21.11",
+    "file": "voicechat-fabric-1-21-11-2-6-22-1789887742859.jar",
+    "desc": "Lets you speak",
+    "loaders": [
+      "Fabric"
+    ],
+    "mc": [
+      "1.21.11"
+    ],
+    "tags": [
+      "Voice"
+    ],
+    "downloads": 0,
+    "added": "2026-09-20",
+    "featured": true
+  },
+  {
+    "id": "essential",
+    "name": "Essential",
+    "cat": "",
+    "version": "1.21.11",
+    "file": "essential-1-5-0-1-fabric-1-21-11-1789887697418.jar",
+    "desc": "Lets you join us",
+    "loaders": [
+      "Fabric"
+    ],
+    "mc": [
+      "1.21.11"
+    ],
+    "tags": [
+      "Friends"
+    ],
+    "downloads": 0,
+    "added": "2026-09-20",
+    "featured": true
+  },
+  {
+    "id": "hide-and-seek",
+    "name": "Hide and seek",
+    "cat": "Transforms you",
+    "version": "1.21.11",
+    "file": "hide-and-seek-1-21-11-1789887650193.jar",
+    "desc": "Hide and seek",
+    "loaders": [
+      "Fabric"
+    ],
+    "mc": [
+      "1.21.11"
+    ],
+    "tags": [],
+    "downloads": 0,
+    "added": "2026-09-20",
+    "featured": true
+  }
+]

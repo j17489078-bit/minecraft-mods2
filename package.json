@@ -1,0 +1,17 @@
+{
+  "name": "minecraft-mods-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small mod directory. Anyone can browse and download; only the admin password can add, edit or remove mods.",
+  "scripts": {
+    "start": "node server.js",
+    "set-password": "node scripts/set-password.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-session": "^1.18.0",
+    "multer": "^2.0.0"
+  }
+}

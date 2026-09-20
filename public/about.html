@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About — Minecraft Mods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="nav-holder">
+  <nav>
+    <a class="brand" href="index.html">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5fd87d" stroke-width="1.7" stroke-linejoin="round"><path d="M12 2.6 20.5 7v10L12 21.4 3.5 17V7z"/><path d="M3.5 7 12 11.6 20.5 7M12 11.6v9.8"/></svg>
+      Minecraft Mods
+    </a>
+    <a class="nav-link nav-desktop" href="index.html">Home</a>
+    <a class="nav-link nav-desktop" href="mods.html">Mods</a>
+    <a class="nav-link nav-desktop" href="updates.html">Updates</a>
+    <a class="nav-link nav-desktop active" href="about.html">About</a>
+    <a class="nav-link nav-desktop" href="contact.html">Contact</a>
+    <button class="nav-search" data-cmdk-open>Search <span class="kbd">⌘K</span></button>
+    <a class="pill-solid" href="mods.html">Browse mods</a>
+    <button id="nav-btn" aria-label="Menu">☰</button>
+  </nav>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a><a href="mods.html">Mods</a><a href="updates.html">Updates</a>
+    <a href="about.html">About</a><a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero" style="padding:80px 0 40px">
+    <h1 style="font-size:clamp(2.2rem,6vw,4rem)" data-rv>About.</h1>
+    <p class="lede" data-rv data-rv-delay="60">A small shelf, kept lean on purpose.</p>
+  </header>
+
+  <section>
+    <p class="lede-sm" style="margin-bottom:18px">Minecraft Mods is a one-person directory: mods that actually get maintained, listed with a real download link and nothing else in the way — no ad-walled redirect pages, no bundled installers.</p>
+    <p class="lede-sm" style="margin-bottom:40px">Everything you see comes from one small list on the server. Only the site owner can add, edit, or remove a listing; anyone with the link can browse and download.</p>
+
+    <div class="sec-head"><h2>FAQ</h2></div>
+    <div id="faq">
+      <div class="faq-item" data-faq>
+        <button data-faq-btn aria-expanded="false">Can I request a mod be added? <span>+</span></button>
+        <p>Yes — use the contact page. Include a link to the mod and what it does.</p>
+      </div>
+      <div class="faq-item" data-faq>
+        <button data-faq-btn aria-expanded="false">Why isn't the jar hosted on GitHub/CurseForge too? <span>+</span></button>
+        <p>Some are. Whatever the fastest, most reliable link is for that mod is what gets listed here.</p>
+      </div>
+      <div class="faq-item" data-faq>
+        <button data-faq-btn aria-expanded="false">How do updates get published? <span>+</span></button>
+        <p>The site owner signs in on the Mods page and uploads the new version. The Updates page reflects it automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Minecraft Mods — a small, curated shelf</span>
+    <button data-top>Back to top ↑</button>
+  </footer>
+</div>
+
+<div id="cmdk" hidden>
+  <div class="cmdk-panel">
+    <div class="cmdk-inputwrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5e6165" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="cmdk-input" type="text" placeholder="Search pages and mods…" autocomplete="off">
+      <button data-cmdk-close aria-label="Close" style="background:none;border:0;color:var(--dim);cursor:pointer;font-size:18px;">×</button>
+    </div>
+    <div id="cmdk-list"></div>
+  </div>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>
